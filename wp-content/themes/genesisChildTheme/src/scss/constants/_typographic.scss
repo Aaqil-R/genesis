@@ -1,0 +1,191 @@
+/**
+  TYPOGRAPHIC
+  global typocraphic constants
+**/
+
+$font-thinnest: 100;
+$font-thinner: 200;
+$font-thin: 300;
+$font-normal: 400;
+$font-medium: 500;
+$font-semibold: 600;
+$font-bold: 700;
+
+$poppins: 'Poppins', Helvetica Neue, Helvetica, Arial, sans-serif;
+$roboto: 'Roboto', Helvetica Neue, Helvetica, Arial, sans-serif;
+$georgia: 'Georgia', Times, Times New Roman, serif;
+
+/* Headlines */
+%h1 {
+  font-family: $poppins;
+  font-size: 36px;
+  font-weight: $font-bold;
+  line-height: 38px;
+
+  @include grid-media($md) {
+    font-size: 38px;
+    line-height: 40px;
+  }
+}
+
+%h2 {
+  font-size: 32px;
+  line-height: 34px;
+
+  font-family: $poppins;
+  font-weight: $font-bold;
+
+  @include grid-media($md) {
+    font-size: 34px;
+    line-height: 36px;
+  }
+}
+
+%h3 {
+  font-family: $poppins;
+  font-size: 24px;
+  font-weight: $font-bold;
+  line-height: 29px;
+
+  @include grid-media($md) {
+    font-size: 26px;
+    line-height: 34px;
+  }
+}
+
+%h4 {
+  font-size: 18px;
+  line-height: 20px;
+
+  font-family: $poppins;
+  font-weight: $font-bold;
+  margin-bottom: 30px;
+
+  @include grid-media($md) {
+    font-size: 24px;
+    line-height: 26px;
+  }
+}
+
+%h5 {
+  font-size: 16px;
+  line-height: 18px;
+
+  font-family: $poppins;
+  font-weight: $font-bold;
+  margin-bottom: 15px;
+}
+
+/* Mixins for Heading */
+@mixin h1($color: $dark-gray) {
+  color: #{$color};
+
+  @extend %h1;
+}
+
+@mixin h2($color: $dark-gray) {
+  color: #{$color};
+
+  @extend %h2;
+}
+
+@mixin h3($color: $dark-gray) {
+  color: #{$color};
+
+  @extend %h3;
+}
+
+@mixin h4($color: $dark-gray) {
+  color: #{$color};
+
+  @extend %h4;
+}
+
+@mixin h5($color: $dark-gray) {
+  color: #{$color};
+
+  @extend %h5;
+}
+
+/* Heading 1 */
+h1 {
+  @include h1;
+}
+
+/* Heading 2 */
+h2 {
+  @include h2;
+}
+
+/* Heading 3 */
+h3 {
+  @include h3;
+}
+
+/* Heading 4 */
+h4 {
+  @include h4;
+}
+
+/* Heading 5 */
+h5 {
+  @include h5;
+}
+
+/* Heading Margins */
+h2,
+h3,
+h4 {
+  margin-bottom: 22px;
+}
+
+/******************
+     BODY TEXT
+*******************/
+%text-default {
+  color: $dark-gray-1;
+  font-family: $roboto;
+  font-size: 16px;
+  line-height: 18px;
+}
+
+%text-default-bold {
+  @extend %text-default;
+}
+
+/* Classes for Body Text */
+.body--default {
+  @extend %text-default;
+}
+
+.body--default-bold,
+.text-bold {
+  @extend %text-default-bold;
+}
+
+body,
+p,
+ul,
+ol {
+  @extend %text-default;
+}
+
+em,
+i {
+  font-style: italic;
+}
+
+strong {
+  font-weight: $font-bold;
+}
+
+p {
+  &:not(:last-child) {
+    margin-bottom: 30px;
+  }
+}
+
+// Colours
+.purple {
+  color: $purple;
+}
